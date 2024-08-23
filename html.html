@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All 4 One Enterprises Ltd.</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0; /* Light Grey */
+        color: #333; /* Dark Grey */
+      }
+
+      /* Header */
+      .header {
+        background-color: #333; /* Dark Grey */
+        color: #fff; /* White */
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #e0f2f1; /* Light Aquamarine */
+      }
+
+      .header .nav-menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .header .nav-menu li {
+        margin-left: 20px;
+      }
+
+      .header .nav-menu a {
+        color: #e0f2f1; /* Light Aquamarine */
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+
+      .header .nav-menu a:hover {
+        background-color: #9db8ab; /* Light Olive */
+        border-radius: 5px;
+      }
+
+      /* Dropdown Menu */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #575757; /* Dark Grey */
+        min-width: 160px;
+        z-index: 1;
+        margin-top: 5px;
+        border-radius: 5px;
+      }
+
+      .dropdown-content a {
+        color: #fff; /* White */
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #9db8ab; /* Light Olive */
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .contact-info {
+        font-size: 14px;
+        color: #e0f2f1; /* Light Aquamarine */
+      }
+
+      /* Banner */
+      .banner {
+        width: 100%;
+        height: 400px;
+        background-image: url("istockphoto-1355654473-612x612.jpg") no-repeat
+          center center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff; /* White */
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .banner h1 {
+        font-size: 2.5em;
+        margin: 0;
+        padding: 20px;
+        background: rgba(51, 51, 51, 0.7); /* Dark Grey with transparency */
+        border-radius: 10px;
+      }
+
+      /* Introduction */
+      .introduction {
+        padding: 40px 20px;
+        text-align: center;
+        background-color: #e0f2f1; /* Light Aquamarine */
+      }
+
+      /* Services Overview */
+      .services {
+        display: flex;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background-color: #d3d3d3; /* Light Grey */
+      }
+
+      .services .service-item {
+        text-align: center;
+        width: 22%;
+        background-color: #f0f0f0; /* White background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 5px;
+      }
+
+      .services .service-item img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .services .service-item h3 {
+        font-size: 1.5em;
+        margin: 20px 0 10px;
+        color: #333; /* Dark Grey */
+      }
+
+      .services .service-item p {
+        color: #575757; /* Medium Grey */
+      }
+
+      /* About Us */
+      .about-us {
+        padding: 40px 20px;
+        background-color: #fff; /* White */
+        text-align: center;
+      }
+
+      .about-us h2 {
+        margin-bottom: 20px;
+        color: #333; /* Dark Grey */
+      }
+
+      .about-us p {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+        color: #575757; /* Medium Grey */
+      }
+
+      .about-us .team {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+      }
+
+      .about-us .team img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid #9db8ab; /* Light Olive */
+      }
+
+      .about-us .team p {
+        margin-top: 10px;
+        color: #333; /* Dark Grey */
+      }
+
+      /* Contact Information */
+      .contact {
+        padding: 40px 20px;
+        background-color: #d3d3d3; /* Light Grey */
+        text-align: center;
+      }
+
+      .contact form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff; /* White */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact input,
+      .contact textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .contact input[type="submit"] {
+        background-color: #333; /* Dark Grey */
+        color: #fff; /* White */
+        cursor: pointer;
+        border: none;
+      }
+
+      .contact input[type="submit"]:hover {
+        background-color: #575757; /* Medium Grey */
+      }
+
+      .contact .info {
+        margin-top: 20px;
+        line-height: 1.8;
+        color: #333; /* Dark Grey */
+      }
+
+      .map {
+        margin-top: 20px;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #333; /* Dark Grey */
+        color: #e0f2f1; /* Light Aquamarine */
+        padding: 20px;
+        text-align: center;
+      }
+
+      .footer a {
+        color: #e0f2f1; /* Light Aquamarine */
+        margin: 0 10px;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: #9db8ab; /* Light Olive */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <img src="IMG-20240820-WA0016.jpg" alt="IMG-20240820-WA0016" />
+      </div>
+      <ul class="nav-menu">
+        <li><a href="html.html">Home</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="#services">Services</a>
+          <div class="dropdown-content">
+            <a href="#finance">Finance</a>
+            <a href="#energy">Renewable Energy/Recycling</a>
+            <a href="#oil-gas">Oil and Gas</a>
+            <a href="#hr">Payroll Management/Human Resources</a>
+          </div>
+        </li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="contact-info">
+        Call Us: (123) 456-7890 | Emaill: info@all4oneenterprises.com
+      </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="banner">
+      <h1>Innovative Solutions for a Sustainable and Efficient Future</h1>
+    </div>
+
+    <!-- Introduction -->
+    <div class="introduction">
+      <h2>Welcome to All 4 One Enterprises Ltd.</h2>
+      <p>
+        Welcome to All 4 One Enterprises Ltd., your partner in innovative and
+        sustainable business solutions. We specialize in Finance, Renewable
+        Energy and Recycling, Oil and Gas Sustainability, and Payroll Management
+        and Human Resources. Our mission is to empower businesses globally by
+        providing expert services that drive financial growth, sustainability,
+        and efficient workforce management. Discover how we can help you achieve
+        your goals.
+      </p>
+    </div>
+
+    <!-- Services Overview -->
+    <div class="services">
+      <div class="service-item">
+        <img src="images-removebg-preview.png" alt="Finance" />
+        <h3>Finance</h3>
+        <p>
+          Our financial services are designed to cater to a broad spectrum of
+          client needs, whether personal or corporate. From comprehensive
+          investment management to strategic financial planning, we ensure that
+          your assets are managed with precision and foresight. Our corporate
+          finance services are tailored to support business growth, providing
+          expert guidance in mergers, acquisitions, and financial restructuring.
+          With a keen focus on accuracy and compliance, our accounting and
+          taxation services offer meticulous bookkeeping, tax preparation, and
+          audit support. Our case studies highlight how our strategic investment
+          advice has led to significant portfolio growth, and our corporate
+          restructuring services have turned struggling businesses around.
+          Clients consistently praise our services for the stability and growth
+          they’ve achieved, attesting to our commitment to their financial
+          well-being.
+        </p>
+      </div>
+      <div class="service-item">
+        <img src="images__1_-removebg-preview.png" alt="Renewable Energy" />
+        <h3>Renewable Energy</h3>
+        <p>
+          We offer cutting-edge renewable energy solutions and recycling
+          programs designed to meet the unique needs of businesses and
+          individuals alike. Our solar and wind energy services include
+          everything from technology installation to ongoing maintenance,
+          ensuring that your energy solutions are both effective and
+          sustainable. Additionally, our energy efficiency programs help reduce
+          consumption and costs, while our recycling initiatives are tailored to
+          minimize waste and enhance sustainability across industries. Adopting
+          these practices not only results in significant cost savings but also
+          makes a substantial positive impact on the environment, helping you
+          meet regulatory requirements with ease. Success stories abound, such
+          as businesses significantly reducing energy costs through solar power
+          adoption or achieving remarkable waste reduction through our tailored
+          recycling programs.
+        </p>
+      </div>
+      <div class="service-item">
+        <img
+          src="oil-pump-mining-crane-extraction-with-eco-environmental-friendly-symbol-icon-leaf-sustainable-clean-technology-2RT9X7E-removebg-preview.png"
+          alt="Oil and Gas"
+        />
+        <h3>Oil and Gas</h3>
+        <p>
+          In the complex world of oil and gas, we offer comprehensive services
+          that span exploration, drilling, and production, with a strong
+          commitment to sustainability. Our operations are designed with the
+          environment in mind, incorporating cutting-edge technologies that
+          reduce carbon emissions and minimize environmental footprints. We
+          conduct thorough environmental impact assessments at every stage,
+          implementing mitigation strategies that include habitat restoration
+          and pollution control. Our sustainable practices are evident in the
+          adoption of green technologies and waste reduction initiatives, which
+          have set new industry standards. These efforts are not just about
+          compliance but are part of our commitment to a sustainable future, as
+          demonstrated by successful projects that combine efficiency with
+          environmental stewardship.
+        </p>
+      </div>
+      <div class="service-item">
+        <img
+          src="png-clipart-human-hand-illustration-payroll-computer-icons-human-resources-tax-business-tax-drawing-miscellaneous-human-resource-management-removebg-preview.png"
+          alt="HR/Payroll"
+        />
+        <h3>Payroll/HR</h3>
+        <p>
+          Managing payroll for a global, remote workforce requires precision and
+          a deep understanding of regional compliance requirements, which is why
+          our payroll management services are designed to ensure accuracy and
+          legal adherence across borders. We use advanced tools to integrate
+          payroll management seamlessly into your operations, whether your
+          employees are scattered across multiple regions or working remotely.
+          Our HR services go beyond basic management, offering comprehensive
+          solutions for global workforce management, from recruitment to
+          onboarding, and ongoing employee relations. We also specialize in
+          employee benefits management, ensuring that all benefits packages are
+          compliant with local labor laws while being attractive and
+          competitive. Our case studies demonstrate how our solutions have
+          enhanced payroll accuracy and employee satisfaction, while our HR
+          services have been pivotal in improving retention and performance
+          across global teams.
+        </p>
+      </div>
+    </div>
+
+    <!-- About Us -->
+    <div class="about-us" id="about-us">
+      <h2>About Us</h2>
+      <p>
+        All 4 One Enterprises Ltd. was established to provide comprehensive
+        solutions that address the diverse needs of modern businesses. We
+        specialize in Finance, Renewable Energy and Recycling, Oil and Gas
+        Sustainability, and Payroll Management and Human Resources. Our mission
+        is to integrate expertise across these sectors, helping businesses
+        navigate the complexities of the global market. With a focus on
+        sustainability and long-term client success, our team of industry
+        experts uses the latest technologies to deliver tailored, innovative
+        solutions. At All 4 One Enterprises Ltd., we are more than just a
+        service provider—we are your strategic partner in achieving sustainable
+        growth.
+      </p>
+      <div class="team">
+        <div>
+          <img src="team-member1.jpg" alt="Team Member 1" />
+          <p>John Doe - CEO</p>
+        </div>
+        <div>
+          <img src="team-member2.jpg" alt="Team Member 2" />
+          <p>Jane Smith - CFO</p>
+        </div>
+        <div>
+          <img src="team-member3.jpg" alt="Team Member 3" />
+          <p>Emily Johnson - COO</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <input type="submit" value="Send Message" />
+      </form>
+      <div class="info">
+        <p><strong>Address:</strong> 123 Main Street, Anytown, USA</p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+        <p><strong>Email:</strong> info@all4one.com</p>
+      </div>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.2719799982!2d-74.0059413!3d40.7127837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a19c8c8f2e1%3A0x35f4d9df27a1b28c!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1601620588581!5m2!1sen!2sin"
+          width="100%"
+          height="300"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        <a href="#privacy-policy">Privacy Policy</a> |
+        <a href="#terms-of-service">Terms of Service</a>
+      </p>
+      <p>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a> |
+        <a href="https://www.twitter.com" target="_blank">Twitter</a> |
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+      </p>
+    </div>
+  </body>
+</html>
